@@ -18,13 +18,12 @@ default-resources:
   - threads=1
   - mem_mb=512
   - gpu=0
-  - runtime="0-08:00:00"
+  - runtime="0-01:00:00"
 #max threads per job/rule. Will take precedence over anything else. Adjust this
 #before submitting to SLURM and leave threads settings elsewhere untouched
 max-threads: 32
 use-conda: True
 use-singularity: False
-conda-frontend: mamba
 printshellcmds: False
 jobs: 50
 local-cores: 1

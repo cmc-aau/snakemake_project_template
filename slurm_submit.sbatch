@@ -16,7 +16,7 @@ set -eu
 # Activate conda environment with only snakemake
 conda activate <snakemake_template>
 
-# Start workflow using ressources defined in the profile. Snakemake itself 
+# Start workflow using resources defined in the profile. Snakemake itself 
 # requires nothing, 1CPU + 1G mem is enough
 
 # Render a DAG to visualize the workflow (optional)
