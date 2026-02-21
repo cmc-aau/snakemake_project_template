@@ -1,8 +1,10 @@
 name: <snakemake_template>
 channels:
-  - bioconda
   - conda-forge
+  - bioconda
 dependencies:
- - snakemake=7.18.2
- - snakefmt # snakemake code formatter
- - graphviz=9.0.0 # to visualize the DAG
+  - snakemake=9.16.3
+  - snakemake-executor-plugin-slurm=2.2.0
+  - snakedeploy=0.16.0
+  - snakefmt=0.11.4 # snakemake code formatter
+  - graphviz=9.0.0 # optional, to visualize the DAG

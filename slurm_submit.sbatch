@@ -23,7 +23,7 @@ conda activate <snakemake_template>
 snakemake --dag | dot -Tsvg > results/dag.svg
 
 # Main workflow
-snakemake --profile profiles/biocloud
+snakemake --executor slurm --jobs 96
 
 # Generate a report once finished (optional)
 snakemake --report results/report.html
