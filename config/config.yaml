@@ -1,5 +1,5 @@
 # This file is for various variables used throughout the workflow.
-# Everything else regarding how things are run should go in the profile config
+# How things are run (executor, resources etc) is set on the command line instead
 
 output_dir: "output"
 # input folder is expected to contain a subfolder for each sampleID/barcode
@@ -10,8 +10,5 @@ tmp_dir: "tmp"
 db_path: ".test/db_sintax.fa"
 log_dir: "logs"
 
-# Number of threads to use for individual roles.
-# Not ideal, but threads can be set in multiple places, so the best is to set 
-# this to a large number and instead adjust the max-threads (per rule) 
-# in the profile config.yaml to suit your particular computing setup.
+# Max number of threads for multithreaded rules
 max_threads: 32

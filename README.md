@@ -1,6 +1,6 @@
 # Snakemake workflow: `<snakemake_template>`
 
-[![Snakemake](https://img.shields.io/badge/snakemake-≥7.18.2-brightgreen.svg)](https://snakemake.github.io)
+[![Snakemake](https://img.shields.io/badge/snakemake-≥8.0-brightgreen.svg)](https://snakemake.github.io)
 [![Tests](https://github.com/<owner>/<repo>/actions/workflows/main.yml/badge.svg)](https://github.com/<owner>/<repo>/actions/workflows/main.yml)
 
 This is a (working) template repository designed for scientific projects where data is processed using [Snakemake](https://snakemake.readthedocs.io/).
@@ -9,12 +9,12 @@ This is a (working) template repository designed for scientific projects where d
 All required tools are automatically installed by Snakemake using conda environments or singularity/apptainer containers, however Snakemake itself needs to be installed first. Load a software module with Snakemake, use a native install, or use the `environment.yml` file to create a conda environment for this particular project using fx `conda env create -n <snakemake_template> -f environment.yml`.
 
 ## Usage
-Adjust the `config.yaml` files under both `config/` and `profiles/` accordingly, then simply run `snakemake --profile profiles/<subfolder>` or submit a SLURM job using the `slurm_submit.sbatch` example script.
+Adjust `config/config.yaml`, then run `snakemake --cores <n>`, or on SLURM submit `slurm_submit.sbatch` (single job) or `slurm_submit_cluster.sbatch` (cluster mode, see the [BioCloud guide](https://cmc-aau.github.io/biocloud-docs/guides/snakemake/biocloud/)).
 The usage of this workflow is also described in the [Snakemake Workflow Catalog](https://snakemake.github.io/snakemake-workflow-catalog/?usage=<owner>%2F<repo>).
 
 # Your to-do's before publishing this workflow
 * Replace `<owner>` and `<repo>` with the correct values in this `README.md` as well as in files under `.github/workflows/`.
-* Replace `<snakemake_template>` with the workflow/project name (can be the same as `<repo>`) here as well as in the `environment.yml` and `slurm_submit.sbatch` files.
+* Replace `<snakemake_template>` with the workflow/project name (can be the same as `<repo>`) here as well as in the `environment.yml`, `slurm_submit.sbatch`, and `slurm_submit_cluster.sbatch` files.
 * Add more requirements to the `environment.yml` file or `yaml` files under `workflow/envs/` if needed. Note that the channel order is important as the default conda config used in the Tests GitHub action has strict mode enabled, and snakemake recommends it.
   * Consider running `snakemake --containerize` afterwards to generate a `Dockerfile`. A GitHub action will automatically build and publish it.
 * Fill in fields in this `README.md` file, in particular provide a proper description of what the workflow does with any relevant details and configuration.
